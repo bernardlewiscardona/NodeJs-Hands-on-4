@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs')%>
+<body>
+    <%- include('./partials/nav.ejs')%>
+    <section class="p-5">
+        <div class="container">
+            <form action="/books" method="POST">
+                <h1 class="text-center mb-5">Add Book</h1>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="form-outline mb-4">
+                        <input type="text" name="title" class="form-control" placeholder="Add Title of the Book" />
+                        <label class="form-label" for="title">Title</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="text" name="coverimg" class="form-control" placeholder="Add Image Link for the Book" />
+                        <label class="form-label" for="coverimg">Image</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="number" name="order" class="form-control" placeholder="Enter How Many Orders"/>
+                        <label class="form-label" for="order">Order</label>
+                    </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                    <input type="text" name="completed" class="form-control" placeholder="True/False" />
+                    <label class="form-label" for="completed">Completed</label>
+                    </div>
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                    <input type="text" name="author" class="form-control" placeholder="Enter Title of the Book"/>
+                    <label class="form-label" for="author">Author</label>
+                    </div>
+                    <!-- Submit button -->
+                    <input type="submit" class="btn btn-primary mb-4 col-2" value="submit">
+                
+                    
+                </form>
+        </div>
+    </section>
+</body>
+</html>

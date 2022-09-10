@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs')%>
+<body>
+    <%- include('./partials/nav.ejs')%>
+    <section class="p-5 container">
+        <h1 class="text-center"">Books For Sale</h1>
+        <div class="container p-5 d-flex flex-wrap">
+            <%if (books.length) {%>
+                <%books.forEach(books => {%>
+                    <div class="card mx-3 shadow" style="width: 18rem;">
+                        <img src=<%= books.coverimg%> class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Book Title: <%=books.title%></h5>
+                            <p class="card-text">Author: <%=books.author%> </p>
+                            <a href="/books/<%=books.id%>" class="btn btn-primary">Go to Details</a>
+                        </div>
+                    </div>
+                    
+                    <%})%>
+                    <%} else{%>
+                        <h2>No Books to display</h2>
+                    <%}%>
+        </div>
+    </section>
+</body>
+</html>

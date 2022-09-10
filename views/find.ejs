@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs')%>
+<body>
+    <%- include('./partials/nav.ejs')%>
+    <section class="p-5 container">
+            <div class="card text-center ">
+                <div class="card-header fs-1">
+                Book Title: <%=books.title%>
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">Order: <%=books.order%></h5>
+                <p class="card-text">Image Link: <%=books.coverimg%></p>
+                <p class="card-text">Completed: <%=books.completed%></p>
+                <p class="card-text">Author: <%=books.author%></p>
+                <a href="/update/<%= books.id%>" class="btn btn-primary">Update</a>
+                <form method="POST" action="/books/<%= books.id%>?_method=DELETE">
+                    <button class="btn btn-danger mt-2" type="submit">Delete </button>
+                </form>
+                </div>
+                <div class="card-footer text-muted">
+                2 days ago
+                </div>
+            </div>
+
+    </section>
+</body>
+</html>
